@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxi Meter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container glass">
+        <!-- Meter Screen -->
+        <section class="meterScreen glass">
+          <!-- Top of the Meter Screen -->
+          <div class="meterScreen__top">
+            <div class="meterScreen__top__timer">
+              <p>
+                <span id="timer-minute">00</span>:<span id="timer-seconds"
+                  >00</span
+                >
+              </p>
+            </div>
+            <div class="meterScreen__top__distance">
+              <p><span id="meter-distance">0</span> KM</p>
+            </div>
+          </div>
+          <!-- Bottom of the Meter Screen -->
+          <div class="meterScreen__bottom">
+            <div class="meterScreen__bottom__fare">
+              <p>P<span id="meter-fare">0</span></p>
+            </div>
+            <div class="meterScreen__bottom__speed_meter">
+              <p><span id="speedometer">0</span>KM/H</p>
+            </div>
+          </div>
+        </section>
+        <!-- Buttons -->
+        <section class="meterButton">
+          <div class="meterButton__vacantBtn">
+            <button id="vacant" disabled>Vacant</button>
+          </div>
+          <div class="meterBtn__hiredBtn">
+            <button id="hired">Hired</button>
+          </div>
+          <div class="meterButton__stopBtn">
+            <button id="stop" disabled>Stop</button>
+          </div>
+          <div class="meterButton__printBtn">
+            <button id="print" disabled>Print</button>
+          </div>
+          <div class="meterButton__speedUpBtn">
+            <button id="speedUp" disabled>Speed Up</button>
+          </div>
+          <div class="meterButton__speedDownBtn">
+            <button id="speedDown" disabled>Speed Down</button>
+          </div>
+          <div class="meterButton__Settings">
+            <button id="settings">Settings</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- <div class="popup">
+      <div class="popup-overlay glass">
+        <h1>Settings</h1>
+        <label for="oldFare">Historic Fares</label>
+        <select name="" id="" class="glass">
+            <option value="2026">2026</option>
+            <option value="2024">2024</option>
+            <option value="2022">2022</option>
+            <option value="2018">2018</option>
+        </select>
+        <button class="glass" id="popupDoneBtn">Done</button>
+      </div>
+    </div> -->
+    <script src="script.js"></script>
+  </body>
+</html>

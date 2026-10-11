@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Body */
+  --body-color-bg-light: rgba(255, 255, 0, 1);
+  --body-color-bg-dark: rgba(128, 128, 0, 1);
+
+  /* Taxi Meter */
+  --meter-color-bg-light: rgba(255, 255, 255, 0.815);
+  --meter-color-bg-dark: rgba(255, 255, 255, 0.4);
+
+  /* Taxi Meter Buttons */
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  background-image: linear-gradient(orange, yellow);
+}
+
+body::selection {
+  background-color: yellow;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: var(--meter-color-bg-light);
+  padding: 12px;
+  border-radius: 16px;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
+.glass {
+  border: 1px solid rgba(128, 128, 128, 0.068);
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+}
+
+.meterScreen {
+  background-color: rgba(0, 128, 0, 0.411);
+  border-radius: 20px;
+  padding: 12px;
+}
+
+:is(.meterScreen__top, .meterScreen__bottom) {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: start;
+  justify-content: space-between;
+}
+
+:is(.meterScreen__top, .meterScreen__bottom) > div > p {
+  font-size: clamp(1vw, 1.5rem, 2.5vw);
+  padding: 4px;
+  font-weight: bold;
+}
+
+.meterButton {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+}
+
+.meterButton > div > button {
+  border: 1px solid rgba(128, 128, 128, 0.068);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  font-size: clamp(0.825vw, 1.25rem, 2vw);
+  padding: 8px;
+  border-radius: 12px;
+  /* Other */
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  cursor: pointer;
+  transition:
+    scale 300ms,
+    background-color 1ms;
+}
+
+.meterButton > div > button:hover {
+  scale: 1.05;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.meterButton > div > button:active {
+  background-color: rgba(0, 255, 0, 0.479);
+}
+
+.meterButton > div > button:disabled {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.meterButton > div > button:hover:disabled {
+  scale: 1.05;
+  background-color: rgba(255, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-overlay {
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+}
+
+.popup-overlay > label {
+  display: block;
+}
+
+.popup-overlay > button {
+  border: 1px solid rgba(128, 128, 128, 0.068);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  font-size: clamp(0.825vw, 1.25rem, 2vw);
+  padding: 8px;
+  border-radius: 12px;
+  /* Other */
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  cursor: pointer;
+  transition:
+    scale 300ms,
+    background-color 1ms;
+  display: block;
+}
+
+.popup-overlay > button:hover {
+  scale: 1.05;
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+select,
+select::picker(select) {
+  appearance: base-select;
+}
+
+.popup-overlay > select {
+  border-radius: 16px;
+  padding: 4px;
+}
+
+.popup-overlay > select::picker(select) {
+  border-radius: 16px;
+  padding: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.068);
+  backdrop-filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.589);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.popup-overlay > select option {
+      border-radius: 12px;
+
+  transition: 50ms;
+}   
+
+.popup-overlay > select option:hover {
+  background-color: rgba(255, 255, 255, 0.678);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
