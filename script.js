@@ -16,7 +16,7 @@ let speedMeter = 0;
 
 // Anti Tampering
 let isTampered = false;
-let tickTime = 500;
+let tickTime = 1000;
 
 // Status
 let isHired = false;
